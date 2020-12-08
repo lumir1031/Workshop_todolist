@@ -5,29 +5,28 @@ window.addEventListener('DOMContentLoaded', function(){
   list.forEach(list => list.addEventListener('click',function(){
     list.classList.toggle('checked')
   }))
+ 
+  // let cross = document.querySelectorAll('.close')
+  // for(let i = 0; i< list.length; i++){
+  //   cross[i].addEventListener('click', function(){
+  //     list[i].remove()
+  //   })
+  // }
+
 
   let cross = document.querySelectorAll('.close')
-  cross.forEach(cross => cross.addEventListener('click',function(){
-    document.querySelector('li').remove()
+  cross.forEach(cross => cross.addEventListener('click', function(event){
+    event.target.parentNode.remove()
   }))
 
 
-  document.getElementById('addBtn').addEventListener('click', function(){
-    let input = document.getElementById('input').value
 
-
-    const span = document.createElement('span')
-    span.className = 'close'
-    span.textContent = 'x'
-
-    
-    const div = document.createElement('li')
-    
-    div.insertAdjacentElement('beforeend', span)
-    
-    div.textContent = input
-    
-    document.querySelector('ul').insertAdjacentElement('beforeend', div)
-  })
-  
 })
+    
+    
+
+    
+    
+    
+    
+  
