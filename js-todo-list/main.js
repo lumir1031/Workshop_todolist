@@ -20,7 +20,41 @@ window.addEventListener('DOMContentLoaded', function(){
   }))
 
 
+  document.getElementById('addBtn').addEventListener('click', function(){
+    let input = document.getElementById('input').value
+    const span = document.createElement('span')
+    const li = document.createElement('li')
+    span.className = 'close'
+    span.textContent = 'x'
+    li.textContent = input
+    li.insertAdjacentElement('beforeend', span)
+    if(input != ''){
+      document.querySelector('ul').insertAdjacentElement('beforeend', li)
+      console.log(input)
+      input = ''
+    }
 
+
+
+
+    li.addEventListener('click', function(){
+      li.classList.toggle('checked')
+    })
+
+
+    // let list = document.querySelectorAll('li')
+    // list.forEach(list => list.addEventListener('click',function(){
+    //   list.classList.toggle('checked')
+    // }))
+
+
+
+    let cross = document.querySelectorAll('.close')
+    cross.forEach(cross => cross.addEventListener('click', function(event){
+      event.target.parentNode.remove()
+    }))
+
+  })
 })
     
     
