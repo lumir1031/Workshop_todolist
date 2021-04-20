@@ -4,8 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
     li => {
       li.addEventListener('click', () => {
         li.classList.toggle("checked");
-    });
-  });
-
+      });
+    }
+  );
+  const toDoDeletes = document.querySelectorAll('span').forEach(
+    span => {
+      span.addEventListener('click', () => {
+        span.closest("li").remove();
+      });
+    }
+  );
   
 })
